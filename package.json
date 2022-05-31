@@ -1,0 +1,26 @@
+{
+  "name": "voicevox_discord_bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "redpeacock78",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/opus": "^0.7.0",
+    "@discordjs/voice": "^0.9.0",
+    "discord.js": "^13.7.0",
+    "ffmpeg-static": "^5.0.0",
+    "sodium": "^3.0.2",
+    "voicevox-api-client": "^1.1.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.1",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  },
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js"
+  }
+}
