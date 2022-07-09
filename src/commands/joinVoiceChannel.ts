@@ -3,7 +3,11 @@ import * as DiscordVoice from "@discordjs/voice";
 
 export const joinVoiceChannel = (client: Discord.Client<boolean>): void => {
   client.on("messageCreate", async (message: Discord.Message<boolean>): Promise<void> => {
-    if (message.author.bot || !(message.content === "!tsumugijoin") || !message.guild)
+    if (
+      message.author.bot ||
+      !/^!(tsumugijoin|join|j)$/.test(message.content) ||
+      !message.guild
+    )
       return;
     const channel: Discord.VoiceBasedChannel = message.member?.voice
       .channel as Discord.VoiceBasedChannel;

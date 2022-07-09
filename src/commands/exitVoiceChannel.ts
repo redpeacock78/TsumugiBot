@@ -3,7 +3,11 @@ import * as DiscordVoice from "@discordjs/voice";
 
 export const exitVoiceChannel = (client: Discord.Client<boolean>): void => {
   client.on("messageCreate", async (message: Discord.Message<boolean>): Promise<void> => {
-    if (message.author.bot || !(message.content === "!tsumugibye") || !message.guild)
+    if (
+      message.author.bot ||
+      !/^!(tsumugibye|bye|b)$/.test(message.content) ||
+      !message.guild
+    )
       return;
     if (
       message.member?.voice.channel?.members
