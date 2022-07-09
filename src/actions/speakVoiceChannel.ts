@@ -1,7 +1,7 @@
 import * as Discord from "discord.js";
 import * as DiscordVoice from "@discordjs/voice";
-import editMessage from "libs/editMessage";
-import createVoice from "libs/createVoice";
+import editMessage from "../libs/editMessage";
+import createVoice from "../libs/createVoice";
 
 /**
  * Discordのボイスチャンネルで音声を再生
