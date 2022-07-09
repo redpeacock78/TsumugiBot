@@ -2,6 +2,11 @@ import "dotenv/config";
 import { Readable } from "stream";
 import * as Voicevox from "voicevox-api-client";
 
+/**
+ * 受け取ったメッセージから音声を合成
+ * @param {Object<string, number>} data
+ * @returns {Promise<Readable}
+ */
 const createVoice = async (data: { text: string; speaker: number }): Promise<Readable> => {
   const client: Voicevox.Client = new Voicevox.Client(
     process.env.VOICEVOX_ENGINE_URL as string
