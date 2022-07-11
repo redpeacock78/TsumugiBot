@@ -18,7 +18,8 @@ export const speakVoiceChannel = (client: Discord.Client<boolean>): void => {
     )
       return;
     const connection: DiscordVoice.VoiceConnection = DiscordVoice.joinVoiceChannel({
-      adapterCreator: channel?.guild.voiceAdapterCreator as any,
+      adapterCreator: channel?.guild
+        .voiceAdapterCreator as DiscordVoice.DiscordGatewayAdapterCreator,
       channelId: channel?.id as string,
       guildId: channel?.guild.id as string,
       selfDeaf: true,
